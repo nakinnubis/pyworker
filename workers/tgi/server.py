@@ -65,7 +65,7 @@ class GenerateStreamHandler(EndpointHandler[InputData]):
     
     @property
     def healthcheck_endpoint(self) -> str:
-        return ""
+        return f"{MODEL_SERVER_URL}/health"
     
     @classmethod
     def payload_cls(cls) -> Type[InputData]:

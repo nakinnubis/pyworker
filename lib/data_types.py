@@ -104,7 +104,7 @@ class EndpointHandler(ABC, Generic[ApiPayload_T]):
 
     @property
     @abstractmethod
-    def healthcheck_endpoint(self) -> str:
+    def healthcheck_endpoint(self) -> Optional[str]:
         """the endpoint on the model API that is used for healthchecks"""
         pass
 

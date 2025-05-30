@@ -13,7 +13,7 @@ EndpointHandler. This is useful for endpoints such as healthchecks. See below fo
 import os
 import logging
 import dataclasses
-from typing import Dict, Any, Union, Type
+from typing import Dict, Any, Optional, Union, Type
 
 from aiohttp import web, ClientResponse
 
@@ -51,8 +51,8 @@ class GenerateHandler(EndpointHandler[InputData]):
         return "/generate"
     
     @property
-    def healthcheck_endpoint(self) -> str:
-        return ""
+    def healthcheck_endpoint(self) -> Optional[str]:
+        return None
     
     @classmethod
     def payload_cls(cls) -> Type[InputData]:
@@ -99,8 +99,8 @@ class GenerateStreamHandler(EndpointHandler[InputData]):
         return "/generate_stream"
     
     @property
-    def healthcheck_endpoint(self) -> str:
-        return ""
+    def healthcheck_endpoint(self) -> Optional[str]:
+        return None
     
     @classmethod
     def payload_cls(cls) -> Type[InputData]:

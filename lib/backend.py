@@ -189,7 +189,7 @@ class Backend:
 
     async def __healthcheck(self):
         health_check_url = self.benchmark_handler.healthcheck_endpoint
-        if health_check_url is None or health_check_url == "":
+        if health_check_url is None:
             log.debug("No healthcheck endpoint defined, skipping healthcheck")
             return
         await sleep(5)
