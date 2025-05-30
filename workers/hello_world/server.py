@@ -49,7 +49,11 @@ class GenerateHandler(EndpointHandler[InputData]):
     def endpoint(self) -> str:
         # the API endpoint
         return "/generate"
-
+    
+    @property
+    def healthcheck_endpoint(self) -> str:
+        return ""
+    
     @classmethod
     def payload_cls(cls) -> Type[InputData]:
         return InputData
@@ -93,7 +97,11 @@ class GenerateStreamHandler(EndpointHandler[InputData]):
     @property
     def endpoint(self) -> str:
         return "/generate_stream"
-
+    
+    @property
+    def healthcheck_endpoint(self) -> str:
+        return ""
+    
     @classmethod
     def payload_cls(cls) -> Type[InputData]:
         return InputData

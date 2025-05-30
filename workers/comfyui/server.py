@@ -69,7 +69,11 @@ class DefaultComfyWorkflowHandler(EndpointHandler[DefaultComfyWorkflowData]):
     @property
     def endpoint(self) -> str:
         return "/runsync"
-
+    
+    @property
+    def healthcheck_endpoint(self) -> str:
+        return ""
+    
     @classmethod
     def payload_cls(cls) -> Type[DefaultComfyWorkflowData]:
         return DefaultComfyWorkflowData
@@ -89,7 +93,11 @@ class CustomComfyWorkflowHandler(EndpointHandler[CustomComfyWorkflowData]):
     @property
     def endpoint(self) -> str:
         return "/runsync"
-
+    
+    @property
+    def healthcheck_endpoint(self) -> str:
+        return ""
+    
     @classmethod
     def payload_cls(cls) -> Type[CustomComfyWorkflowData]:
         return CustomComfyWorkflowData
